@@ -1,8 +1,8 @@
 {
-    "url": "https://raw.githubusercontent.com/afine-com/CVE-2018-25031/main/DOMXSS.yaml",
+    "url": "https://jerryhttpd.github.io/scripts/xss.yaml",
     "urls": [
         {
-            "url": "https://raw.githubusercontent.com/afine-com/CVE-2018-25031/main/DOMXSS.yaml",
+            "url": "https://jerryhttpd.github.io/scripts/xss.yaml",
             "name": "afine"
         }
     ]
