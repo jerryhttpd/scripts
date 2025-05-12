@@ -1,0 +1,9 @@
+{
+    "url": "https://jerryhttpd.github.io/scripts/redirect.yaml",
+    "urls": [
+        {
+            "url": "https://jerryhttpd.github.io/scripts/redirect.yaml",
+            "name": "afine"
+        }
+    ]
+}
